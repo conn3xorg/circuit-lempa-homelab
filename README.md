@@ -208,38 +208,38 @@ Each member circuit's README says what it does in detail, and what it leaves alo
 
 ## Inputs
 
-| Name | Description | Default |
-| --- | --- | --- |
-| `hosts` | The homelab server: a map of one name to an address or a host object. | required |
-| `ssh_user` | User to log in as. | `"root"` |
-| `ssh_port` | SSH port. | `22` |
-| `ssh_private_key_file` | Private key. When null, the SSH agent. | `null` |
-| `ssh_known_hosts_file` | known_hosts file. When null, `~/.ssh/known_hosts`. | `null` |
-| `ssh_become` | Run commands as root through sudo. | `false` |
-| `network` | Traefik and BIND. | `true` |
-| `dashboard` | Homepage. | `true` |
-| `monitoring` | Uptime Kuma, Prometheus and Grafana. | `true` |
-| `smart_home` | Home Assistant. | `false` |
-| `ai` | Ollama and Open WebUI. | `false` |
-| `automation` | Kestra and Semaphore UI, and Renovate with `renovate`. | `false` |
-| `code` | GitLab CE, and a runner with `gitlab_runner`. | `false` |
-| `databases` | MariaDB, PostgreSQL and InfluxDB 3 Core. | `false` |
-| `security` | authentik and Suricata, and Wazuh with `wazuh_server`. | `false` |
-| `containers_ui` | Portainer CE and Dockge. | `false` |
-| `domain` | Zone the app names live in. | `"home.arpa"` |
-| `address` | IPv4 address the names point at, and BIND answers on. When null, the address in `hosts`. | `null` |
-| `admin_email` | Email for the admin accounts. Needed by `ai`, `automation` and `security`. | `null` |
-| `admin_password` | Password for every admin account. Ephemeral. Needed by every category but `network`, `dashboard` and `smart_home`. | `null` |
-| `passwords` | Passwords that replace `admin_password` for one app. Ephemeral. | `{}` |
-| `ollama_models` | Models Ollama pulls. | `[]` |
-| `renovate` | `platform`, `repositories` and optional `endpoint` for Renovate. | `null` |
-| `renovate_token` | Renovate's token. Ephemeral. | `null` |
-| `gitlab_runner` | Run a GitLab Runner. | `false` |
-| `gitlab_runner_token` | The runner's `glrt-` token. Ephemeral. | `null` |
-| `db_users` | Apps that get a user and a database in MariaDB and PostgreSQL. | `[]` |
-| `db_passwords` | Password for each of `db_users`. Ephemeral. | `{}` |
-| `influxdb_token` | InfluxDB's first admin token. Ephemeral. Needed by `databases`. | `null` |
-| `wazuh_server` | A host of its own for the Wazuh server. | `null` |
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `hosts` | any | Required | The homelab server: a map of one name to an address or a host object. |
+| `ssh_user` | string | `"root"` | User to log in as. |
+| `ssh_port` | number | `22` | SSH port. |
+| `ssh_private_key_file` | string | `null` | Private key. When null, the SSH agent. |
+| `ssh_known_hosts_file` | string | `null` | known_hosts file. When null, `~/.ssh/known_hosts`. |
+| `ssh_become` | bool | `false` | Run commands as root through sudo. |
+| `network` | bool | `true` | Traefik and BIND. |
+| `dashboard` | bool | `true` | Homepage. |
+| `monitoring` | bool | `true` | Uptime Kuma, Prometheus and Grafana. |
+| `smart_home` | bool | `false` | Home Assistant. |
+| `ai` | bool | `false` | Ollama and Open WebUI. |
+| `automation` | bool | `false` | Kestra and Semaphore UI, and Renovate with `renovate`. |
+| `code` | bool | `false` | GitLab CE, and a runner with `gitlab_runner`. |
+| `databases` | bool | `false` | MariaDB, PostgreSQL and InfluxDB 3 Core. |
+| `security` | bool | `false` | authentik and Suricata, and Wazuh with `wazuh_server`. |
+| `containers_ui` | bool | `false` | Portainer CE and Dockge. |
+| `domain` | string | `"home.arpa"` | Zone the app names live in. |
+| `address` | string | `null` | IPv4 address the names point at, and BIND answers on. When null, the address in `hosts`. |
+| `admin_email` | string | `null` | Email for the admin accounts. Needed by `ai`, `automation` and `security`. |
+| `admin_password` | string | `null` | Password for every admin account. Ephemeral. Needed by every category but `network`, `dashboard` and `smart_home`. |
+| `passwords` | map(string) | `{}` | Passwords that replace `admin_password` for one app. Ephemeral. |
+| `ollama_models` | list(string) | `[]` | Models Ollama pulls. |
+| `renovate` | object | `null` | `platform`, `repositories` and optional `endpoint` for Renovate. |
+| `renovate_token` | string | `null` | Renovate's token. Ephemeral. |
+| `gitlab_runner` | bool | `false` | Run a GitLab Runner. |
+| `gitlab_runner_token` | string | `null` | The runner's `glrt-` token. Ephemeral. |
+| `db_users` | list(string) | `[]` | Apps that get a user and a database in MariaDB and PostgreSQL. |
+| `db_passwords` | map(string) | `{}` | Password for each of `db_users`. Ephemeral. |
+| `influxdb_token` | string | `null` | InfluxDB's first admin token. Ephemeral. Needed by `databases`. |
+| `wazuh_server` | any | `null` | A host of its own for the Wazuh server. |
 
 ## Outputs
 

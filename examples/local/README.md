@@ -27,7 +27,7 @@ Then open `https://home.home.arpa` and accept Traefik's self-signed certificate.
 [`check.sh`](check.sh) is what CI runs instead of a browser. It asks BIND for each name, fetches each app through Traefik by name, finds the tiles on Homepage, reaches Uptime Kuma's socket.io, and has Grafana query Prometheus:
 
 ```sh
-LAB_PASSWORD=Example-lab-pass-1 podman exec -i -e LAB_PASSWORD circuit-lempa-homelab bash -s < check.sh   # sudo podman on Linux
+LAB_PASSWORD=Example-lab-pass-1 podman exec -i -e LAB_PASSWORD circuit-lempa-homelab bash -s < check.sh   # on Linux: sudo --preserve-env=LAB_PASSWORD podman
 ```
 
 CI also applies the stack one release back first, from [`previous-release.hcl`](previous-release.hcl), then upgrades it, and plans every other category against the same host with [`every-category.hcl`](every-category.hcl).
