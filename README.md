@@ -20,7 +20,7 @@ variable "admin_password" {
 }
 
 module "homelab" {
-  source = "github.com/conn3xorg/circuit-lempa-homelab?ref=v0.1.1"
+  source = "github.com/conn3xorg/circuit-lempa-homelab?ref=v0.1.2"
 
   hosts                = { lab = "192.168.1.20" }
   ssh_private_key_file = "~/.ssh/id_ed25519"
@@ -51,7 +51,7 @@ Want more? Turn a category on and apply again:
 
 ```hcl
 module "homelab" {
-  source = "github.com/conn3xorg/circuit-lempa-homelab?ref=v0.1.1"
+  source = "github.com/conn3xorg/circuit-lempa-homelab?ref=v0.1.2"
 
   hosts                = { lab = "192.168.1.20" }
   ssh_private_key_file = "~/.ssh/id_ed25519"
