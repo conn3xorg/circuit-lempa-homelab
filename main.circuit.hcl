@@ -120,7 +120,7 @@ module "podman" {
 
 # Network management.
 module "traefik" {
-  source = "github.com/conn3xorg/circuit-traefik?ref=v0.1.1"
+  source = "github.com/conn3xorg/circuit-traefik?ref=v0.1.2"
   count  = var.network ? 1 : 0
 
   hosts                = var.hosts
@@ -205,7 +205,7 @@ module "uptimekuma" {
 }
 
 module "prometheus" {
-  source = "github.com/conn3xorg/circuit-prometheus?ref=v0.1.1"
+  source = "github.com/conn3xorg/circuit-prometheus?ref=v0.1.2"
   count  = var.monitoring ? 1 : 0
 
   hosts                = var.hosts
@@ -259,7 +259,7 @@ module "homeassistant" {
 
 # AI.
 module "ollama" {
-  source = "github.com/conn3xorg/circuit-ollama?ref=v0.1.2"
+  source = "github.com/conn3xorg/circuit-ollama?ref=v0.1.3"
   count  = var.ai ? 1 : 0
 
   hosts                = var.hosts
