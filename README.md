@@ -67,6 +67,8 @@ module "homelab" {
 
 To try the default stack on a throwaway container first, see [examples/local](examples/local).
 
+Only after a dashboard and uptime checks? [circuit-mini-homelab](https://github.com/conn3xorg/circuit-mini-homelab) is this stack cut down to Homepage and Uptime Kuma on loopback, small enough to read in one sitting. It's the circuit the [private AI box tutorial](https://docs.conn3x.org/tutorials/private-ai-box#part-2-make-your-own-circuit) builds. It runs the same Homepage and Uptime Kuma circuits, so pick one of the two for a server, not both.
+
 ## The categories
 
 One row per chapter of the video, in its order. On means on by default.
