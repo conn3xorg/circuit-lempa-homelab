@@ -482,7 +482,7 @@ module "wazuh" {
 
 # Containers in the browser.
 module "portainer" {
-  source = "github.com/conn3xorg/circuit-portainer?ref=v0.1.0"
+  source = "github.com/conn3xorg/circuit-portainer?ref=v0.1.1"
   count  = var.containers_ui ? 1 : 0
 
   hosts                = var.hosts
