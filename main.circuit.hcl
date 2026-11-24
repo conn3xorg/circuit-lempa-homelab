@@ -120,7 +120,7 @@ module "podman" {
 
 # Network management.
 module "traefik" {
-  source = "github.com/conn3xorg/circuit-traefik?ref=v0.1.2"
+  source = "github.com/conn3xorg/circuit-traefik?ref=v0.2.1"
   count  = var.network ? 1 : 0
 
   hosts                = var.hosts
@@ -129,13 +129,6 @@ module "traefik" {
   ssh_private_key_file = var.ssh_private_key_file
   ssh_known_hosts_file = var.ssh_known_hosts_file
   ssh_become           = var.ssh_become
-
-  # circuit-traefik v0.1.2 defaults to 3.7.16, which has GHSA-3rh5-223h-cpwr.
-  traefik_version = "3.7.20"
-  checksums = {
-    amd64 = "389736d8b121d4d41e044294df03ba4d8fe4ea3744e38ae270c10fbdaab8e10a"
-    arm64 = "123f4163c0c833054d3cb6087006011a8db13fcdb2ee8c18c5c6a711710fa38e"
-  }
 
   sites = local.sites
 }
