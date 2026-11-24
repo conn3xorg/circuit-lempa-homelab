@@ -120,7 +120,7 @@ module "podman" {
 
 # Network management.
 module "traefik" {
-  source = "github.com/conn3xorg/circuit-traefik?ref=v0.1.2"
+  source = "github.com/conn3xorg/circuit-traefik?ref=v0.2.1"
   count  = var.network ? 1 : 0
 
   hosts                = var.hosts

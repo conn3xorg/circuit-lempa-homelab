@@ -94,7 +94,7 @@ jobs:
           conn3x init
           conn3x apply -auto-approve
           conn3x plan -detailed-exitcode
-          sudo podman exec circuit-lempa-homelab traefik version | grep -q 'Version: *3.7.16'
+          sudo podman exec circuit-lempa-homelab traefik version | grep -q 'Version: *3.7.20'
           sudo podman exec circuit-lempa-homelab podman inspect homepage --format '{{.ImageName}}' | grep -q '@sha256:19c5c0918445'
           sudo podman exec circuit-lempa-homelab podman inspect uptime-kuma --format '{{.ImageName}}' | grep -q '@sha256:e88415a90dd2'
       - name: Use the stack after the upgrade
