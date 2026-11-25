@@ -428,7 +428,7 @@ module "influxdb" {
 
 # Security and identity.
 module "authentik" {
-  source = "github.com/conn3xorg/circuit-authentik?ref=v0.1.2"
+  source = "github.com/conn3xorg/circuit-authentik?ref=v0.1.3"
   count  = var.security ? 1 : 0
 
   depends_on = [module.postgres]
