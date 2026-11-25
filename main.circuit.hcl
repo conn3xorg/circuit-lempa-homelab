@@ -307,7 +307,7 @@ module "kestra" {
 }
 
 module "semaphore" {
-  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.0"
+  source = "github.com/conn3xorg/circuit-semaphore?ref=v0.1.1"
   count  = var.automation ? 1 : 0
 
   hosts                = var.hosts
