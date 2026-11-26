@@ -219,7 +219,7 @@ module "prometheus" {
 }
 
 module "grafana" {
-  source = "github.com/conn3xorg/circuit-grafana?ref=v0.2.0"
+  source = "github.com/conn3xorg/circuit-grafana?ref=v0.2.2"
   count  = var.monitoring ? 1 : 0
 
   hosts                = var.hosts
